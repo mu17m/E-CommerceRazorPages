@@ -1,13 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PresentationLayer.Models;
+﻿using BulkyWeb.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Reflection.Emit;
 
-namespace PresentationLayer.Database
+namespace BulkyWeb.Database
 {
     public class cls_Database : DbContext
     {
         public cls_Database(DbContextOptions<cls_Database> options) : base(options)
         {
-            
+
         }
         public DbSet<Category> Categories { get; set; }
 
@@ -20,6 +22,6 @@ namespace PresentationLayer.Database
                 new Category { Id = 3, Name = "History", DisplayOrder = 3 }
             );
         }
-    
+
     }
 }
